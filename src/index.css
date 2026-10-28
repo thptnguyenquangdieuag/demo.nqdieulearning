@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Baloo 2', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Baloo 2', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+@layer base {
+  html, body {
+    font-family: 'Baloo 2', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  * {
+    font-family: 'Baloo 2', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+}
+
+body, button, input, select, textarea, optgroup, span, p, h1, h2, h3, h4, h5, h6, table, th, td, label {
+  font-family: 'Baloo 2', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+math {
+  font-family: "Cambria Math", "Latin Modern Math", "STIX Two Math", "KaTeX_Main", math, serif;
+  font-size: 1.1em;
+  vertical-align: middle;
+}
+
+mjx-container {
+  display: inline-block !important;
+  margin: 0 2px !important;
+  vertical-align: middle !important;
+  outline: none !important;
+}
+
+mjx-container[jax="CHTML"][display="true"] {
+  display: block !important;
+  margin: 1em 0 !important;
+}
+
+/* Slim and clean scrollbars for desktop & laptop displays */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* Print optimizations */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 10mm;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  /* Hide backdrop blur and non-print elements */
+  .print\:hidden {
+    display: none !important;
+  }
+
+  /* Expand modal container for full-page printing */
+  .print-container {
+    position: static !important;
+    overflow: visible !important;
+    max-height: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: white !important;
+  }
+}

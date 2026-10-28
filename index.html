@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    
+    <!-- PWA Primary Meta Tags -->
+    <meta name="theme-color" content="#2563eb" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="NQDieu Learning" />
+    <meta name="application-name" content="NQDieu Learning" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+    
+    <script>
+      // Filter out harmless [vite] failed to connect to websocket logs in AI Studio preview iframe
+      (function() {
+        var filterMsg = function(msg) {
+          if (!msg) return false;
+          var s = String(msg);
+          return s.includes('failed to connect to websocket') || 
+                 s.includes('WebSocket closed without opened') || 
+                 s.includes('@vite/client') || 
+                 s.includes('[vite]');
+        };
+        ['error', 'warn', 'log'].forEach(function(method) {
+          var orig = console[method];
+          if (typeof orig === 'function') {
+            console[method] = function() {
+              for (var i = 0; i < arguments.length; i++) {
+                if (filterMsg(arguments[i])) return;
+              }
+              orig.apply(console, arguments);
+            };
+          }
+        });
+        window.addEventListener('unhandledrejection', function(event) {
+          var reason = event && event.reason;
+          var msg = reason ? (reason.message || String(reason)) : '';
+          if (filterMsg(msg)) {
+            event.preventDefault();
+            event.stopImmediatePropagation();
+          }
+        }, true);
+        window.addEventListener('error', function(event) {
+          var msg = event ? (event.message || String(event)) : '';
+          if (filterMsg(msg)) {
+            event.preventDefault();
+            event.stopImmediatePropagation();
+          }
+        }, true);
+      })();
+    </script>
+    <link rel="icon" type="image/png" href="./logo.png" />
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="/fonts/fonts.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <title>NQDieu Learning</title>
+    <meta name="description" content="NỀN TẢNG HỌC TẬP TRỰC TUYẾN CỦA TRƯỜNG THPT NGUYỄN QUANG DIÊU" />
+    <meta property="og:title" content="NQDIEU LEARNING" />
+    <meta property="og:description" content="NỀN TẢNG HỌC TẬP TRỰC TUYẾN CỦA TRƯỜNG THPT NGUYỄN QUANG DIÊU" />
+    <script>
+      window.MathJax = {
+        options: {
+          enableMenu: false,
+          ignoreHtmlClass: 'tex2jax_ignore',
+          processHtmlClass: 'tex2jax_process'
+        },
+        startup: {
+          pageReady: () => {
+            return window.MathJax.startup.defaultPageReady();
+          }
+        }
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/mml-chtml.js"></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

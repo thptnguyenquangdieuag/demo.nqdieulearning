@@ -1,0 +1,63 @@
+/* 
+  =============================================================================
+  THƯ MỤC CHỨA FONT TÙY CHỈNH HỆ THỐNG LMS THPT NGUYỄN QUANG DIÊU
+  =============================================================================
+  Hệ thống tự động nạp và ưu tiên áp dụng toàn bộ font chữ được lưu trong thư mục này.
+  
+  Cách sử dụng:
+  1. Thả file font vào thư mục /public/fonts/ (hỗ trợ .woff2, .woff, .ttf, .otf)
+  2. Đặt tên file là:
+     - custom-font.woff2 / custom-font.ttf / custom-font.otf (Dành cho kiểu chữ thường Regular)
+     - custom-font-bold.woff2 / custom-font-bold.ttf / custom-font-bold.otf (Dành cho kiểu chữ Đậm Bold)
+     - custom-font-medium.woff2 / custom-font-medium.ttf (Dành cho kiểu Medium)
+     HOẶC bạn có thể khai báo thêm các quy tắc @font-face trực tiếp vào file này!
+  =============================================================================
+*/
+
+/* 1. Kiểu chữ thường (Regular - 400) */
+@font-face {
+  font-family: 'AppCustomFont';
+  src: url('/fonts/custom-font.woff2') format('woff2'),
+       url('/fonts/custom-font.woff') format('woff'),
+       url('/fonts/custom-font.ttf') format('truetype'),
+       url('/fonts/custom-font.otf') format('opentype'),
+       url('/fonts/font.woff2') format('woff2'),
+       url('/fonts/font.ttf') format('truetype'),
+       url('/fonts/font.otf') format('opentype'),
+       url('/fonts/regular.ttf') format('truetype'),
+       url('/fonts/regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 2. Kiểu chữ vừa (Medium - 500/600) */
+@font-face {
+  font-family: 'AppCustomFont';
+  src: url('/fonts/custom-font-medium.woff2') format('woff2'),
+       url('/fonts/custom-font-medium.woff') format('woff'),
+       url('/fonts/custom-font-medium.ttf') format('truetype'),
+       url('/fonts/custom-font-medium.otf') format('opentype'),
+       url('/fonts/font-medium.ttf') format('truetype'),
+       url('/fonts/medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 3. Kiểu chữ đậm (Bold - 700/800/900) */
+@font-face {
+  font-family: 'AppCustomFont';
+  src: url('/fonts/custom-font-bold.woff2') format('woff2'),
+       url('/fonts/custom-font-bold.woff') format('woff'),
+       url('/fonts/custom-font-bold.ttf') format('truetype'),
+       url('/fonts/custom-font-bold.otf') format('opentype'),
+       url('/fonts/font-bold.woff2') format('woff2'),
+       url('/fonts/font-bold.ttf') format('truetype'),
+       url('/fonts/font-bold.otf') format('opentype'),
+       url('/fonts/bold.ttf') format('truetype'),
+       url('/fonts/bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
