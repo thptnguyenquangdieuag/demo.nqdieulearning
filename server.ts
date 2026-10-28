@@ -4219,7 +4219,7 @@ app.post("/api/sync-all", async (req, res) => {
 
     return res.json({
       success: true,
-      message: "Đã đồng bộ toàn bộ dữ liệu (Tài khoản & Khóa học) lên máy chủ & Google Sheets thành công!",
+      message: "Đã đồng bộ toàn bộ dữ liệu (Tài khoản & Khóa học) lên máy chủ thành công!",
       teachers: db.teachers,
       students: db.students,
       courses: db.courses,
@@ -4854,7 +4854,7 @@ app.delete("/api/accounts/:accountType/:idUser", async (req, res) => {
       await saveDb(db);
             return res.json({
         success: true,
-        message: `Đã xóa tài khoản Giáo viên ${idUser}! Thông tin Quản trị viên trên Google Sheet vẫn được bảo toàn nguyên vẹn.`,
+        message: `Đã xóa tài khoản Giáo viên ${idUser}!`,
         teachers: db.teachers,
         students: db.students,
       });
@@ -4868,7 +4868,7 @@ app.delete("/api/accounts/:accountType/:idUser", async (req, res) => {
       await saveDb(db);
             return res.json({
         success: true,
-        message: `Đã xóa tài khoản Học sinh ${idUser}! Thông tin Quản trị viên trên Google Sheet vẫn được bảo toàn nguyên vẹn.`,
+        message: `Đã xóa tài khoản Học sinh ${idUser}!`,
         teachers: db.teachers,
         students: db.students,
       });
@@ -4904,7 +4904,7 @@ app.delete("/api/accounts/delete-all", async (req, res) => {
     await saveDb(db);
         return res.json({
       success: true,
-      message: `Đã xóa thành công toàn bộ ${count} tài khoản Giáo viên! Thông tin Quản trị viên trên Google Sheet vẫn được bảo toàn.`,
+      message: `Đã xóa thành công toàn bộ ${count} tài khoản Giáo viên!`,
       teachers: db.teachers,
       students: db.students,
     });
@@ -4914,7 +4914,7 @@ app.delete("/api/accounts/delete-all", async (req, res) => {
     await saveDb(db);
     return res.json({
       success: true,
-      message: `Đã xóa thành công toàn bộ ${count} tài khoản Học sinh! Thông tin Quản trị viên trên Google Sheet vẫn được bảo toàn.`,
+      message: `Đã xóa thành công toàn bộ ${count} tài khoản Học sinh!`,
       teachers: db.teachers,
       students: db.students,
     });
