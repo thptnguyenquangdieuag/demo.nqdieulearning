@@ -484,7 +484,7 @@ export const LoginModal: React.FC<LoginModalProps> = ({
               NQDIEU LEARNING
             </h1>
             <h2 className="md:text-xs lg:text-base xl:text-lg font-black text-amber-300 tracking-wide uppercase md:mt-1 lg:mt-1.5 drop-shadow-[0_2px_6px_rgba(0,0,0,0.95)] text-center">
-              NỀN TẢNG HỌC TẬP TRỰC TUYẾN
+              NỀN TẢNG AI HỌC TẬP TRỰC TUYẾN
             </h2>
             {/* Star Icon */}
             <div className="text-amber-300 text-xs lg:text-base my-0.5 lg:my-1 flex items-center justify-center gap-1 drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
@@ -547,7 +547,7 @@ export const LoginModal: React.FC<LoginModalProps> = ({
               NQDIEU <span className="text-amber-300">LEARNING</span>
             </h1>
             <h2 className="text-[11px] sm:text-xs font-bold text-sky-200 tracking-wide uppercase mt-1 drop-shadow-[0_2px_5px_rgba(0,0,0,0.9)] text-center">
-              NỀN TẢNG HỌC TẬP TRỰC TUYẾN
+              NỀN TẢNG AI HỌC TẬP TRỰC TUYẾN
             </h2>
           </div>
 
