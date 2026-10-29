@@ -15,9 +15,9 @@ export default defineConfig(() => {
         includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'pwa-192x192.png', 'pwa-512x512.png'],
         manifest: {
           id: '/',
-          name: 'NQDieu Learning - Nền Tảng Học Trực Tuyến',
-          short_name: 'NQDieu LMS',
-          description: 'Nền tảng học tập trực tuyến của Trường THPT Nguyễn Quang Diêu',
+          name: 'NQDieu Learning - Nền tảng AI học tập trực tuyến',
+          short_name: 'NQDieu Learning',
+          description: 'Nền tảng AI học tập trực tuyến của Trường THPT Nguyễn Quang Diêu',
           theme_color: '#2563eb',
           background_color: '#f8fafc',
           display: 'standalone',

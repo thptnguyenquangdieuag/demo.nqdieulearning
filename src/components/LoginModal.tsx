@@ -590,7 +590,7 @@ export const LoginModal: React.FC<LoginModalProps> = ({
                   : isForgotPasswordMode
                   ? 'QUÊN MẬT KHẨU'
                   : isRegisterMode
-                  ? 'ĐĂNG KÝ TÀI KHOẢN'
+                  ? 'ĐĂNG KÝ'
                   : 'ĐĂNG NHẬP'}
               </h3>
               <p className="text-[11px] sm:text-xs md:text-xs lg:text-[13px] text-slate-500 font-medium text-center mt-0.5 sm:mt-1 mb-1.5 sm:mb-2 md:mb-3 lg:mb-3.5 md:min-h-0 flex items-center justify-center px-1">
@@ -601,7 +601,7 @@ export const LoginModal: React.FC<LoginModalProps> = ({
                   : isForgotPasswordMode
                   ? 'Điền thông tin bên dưới để gửi yêu cầu khôi phục mật khẩu'
                   : isRegisterMode
-                  ? 'Điền thông tin bên dưới để gửi yêu cầu cấp tài khoản mới'
+                  ? 'Điền thông tin bên dưới để đăng ký'
                   : 'Nhập thông tin tài khoản của bạn để truy cập'}
               </p>
 

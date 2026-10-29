@@ -1,3 +1,4 @@
+import http from "http";
 import dns from "node:dns";
 // Prioritize IPv4 DNS lookups to eliminate IPv6 network timeouts on cloud containers
 try {
@@ -6499,11 +6500,15 @@ TUYỆT ĐỐI KHÔNG thêm thắt các đoạn hội thoại dẫn dắt. Chỉ
 
 
 async function startServer() {
+  const httpServer = http.createServer(app);
+
   if (process.env.NODE_ENV !== "production") {
     const vite = await createViteServer({
       server: {
         middlewareMode: true,
-        hmr: false,
+        hmr: {
+          server: httpServer,
+        },
       },
       appType: "spa",
     });
@@ -6516,7 +6521,7 @@ async function startServer() {
     });
   }
 
-  app.listen(PORT, "0.0.0.0", () => {
+  httpServer.listen(PORT, "0.0.0.0", () => {
     console.log(`Server running on http://0.0.0.0:${PORT}`);
     cleanupDemoDataFromSupabase().catch((err) => {
       console.warn("[Startup] Failed to cleanup demo data from Supabase:", err?.message);
